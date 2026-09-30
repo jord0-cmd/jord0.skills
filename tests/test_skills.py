@@ -21,6 +21,7 @@ SKILLS_DIR = REPO_ROOT / "skills"
 EXPECTED_SKILLS = [
     "PORTAL", "STRICT", "FORGE", "CONCLAVE", "NOTIFY",
     "RECON", "RECALL", "ECHO", "MIRROR", "SPARK", "REGTRAX",
+    "OPTIC", "LOCUS", "REFRAX",
 ]
 
 # Personal references that must never appear
@@ -176,7 +177,7 @@ def test_no_personal_references(results: TestResults):
             if violations:
                 results.fail(
                     f"personal-refs/{rel_path}",
-                    f"Found: {', '.join(set(violations)[:3])}"
+                    f"Found: {', '.join(sorted(set(violations))[:3])}"
                 )
             else:
                 results.ok(f"personal-refs/{rel_path}")
@@ -328,7 +329,7 @@ def test_plugin_json(results: TestResults):
         if matches:
             violations.extend(matches)
     if violations:
-        results.fail("plugin/no-personal-refs", f"Found: {', '.join(set(violations)[:3])}")
+        results.fail("plugin/no-personal-refs", f"Found: {', '.join(sorted(set(violations))[:3])}")
     else:
         results.ok("plugin/no-personal-refs")
 
@@ -371,7 +372,7 @@ def test_marketplace_json(results: TestResults):
         if matches:
             violations.extend(matches)
     if violations:
-        results.fail("marketplace/no-personal-refs", f"Found: {', '.join(set(violations)[:3])}")
+        results.fail("marketplace/no-personal-refs", f"Found: {', '.join(sorted(set(violations))[:3])}")
     else:
         results.ok("marketplace/no-personal-refs")
 
