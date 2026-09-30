@@ -25,6 +25,24 @@
         "code-review",
         "visualization"
       ]
+    },
+    {
+      "name": "jord0-hooks",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/jord0-cmd/jord0.hooks.git",
+        "ref": "main"
+      },
+      "description": "Three hooks that stop three real failures: a \"done\" with no test run since the last edit, a delete git cannot give back, and --help on a script nobody read.",
+      "version": "1.0.0",
+      "category": "development",
+      "tags": [
+        "hooks",
+        "guardrails",
+        "git",
+        "testing",
+        "safety"
+      ]
     }
   ]
 }
