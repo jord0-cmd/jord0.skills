@@ -34,7 +34,7 @@
         "ref": "main"
       },
       "description": "Three hooks that stop three real failures: a \"done\" with no test run since the last edit, a delete git cannot give back, and --help on a script nobody read.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "development",
       "tags": [
         "hooks",
